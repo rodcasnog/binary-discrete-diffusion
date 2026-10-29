@@ -1,0 +1,13 @@
+# NELBO of a checkpoint (binary_diffusion.eval.nelbo): result.json in out.
+checkpoint_dir: ???   # <run>/checkpoints_ema/<step>
+# A dotlist applied to the run's config, e.g. 'overrides=["model.dtype=float32"]'.
+overrides: []
+split: test           # val | test
+hard: false           # the task's hard subset (HARD_* in data/<task>.py)
+n: null               # instances; null is the whole split (graph coloring needs a number)
+subset_seed: 1        # which n: a seeded permutation prefix
+seed: 0               # noise keys
+batch_size: 256
+passes: 2             # independent noise passes over the same instances
+out: ???
+hydra: {run: {dir: '${out}'}}

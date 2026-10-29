@@ -1,0 +1,3 @@
+# @package _global_
+defaults: [/tinystories, _self_]
+diffusion: {kernel: masked}

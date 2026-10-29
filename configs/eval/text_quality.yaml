@@ -1,0 +1,18 @@
+# GenPPL, entropy and MAUVE of text samples (binary_diffusion.eval.text_quality): result.json in out.
+samples: ???          # samples.json files of one corpus, scored separately against shared references
+split: test           # references: as many distinct records of this split as a file holds samples
+judge: gpt2-large     # judge LM, also the MAUVE featurizer and the entropy's tokenizer
+judge_revision: 32b71b12589c2f8d625668d2335a01cac3249519
+dtype: bfloat16
+attn_implementation: eager
+batch_size: 4
+context_length: 1024
+stride: 256           # sliding-window step for texts longer than the context
+mauve:                # the remaining MAUVE settings are the mauve-text defaults
+  num_buckets: 200
+  max_text_length: 1024
+  float64: true
+  reference_seeds: [11, 12, 13, 14]
+  clustering_seeds: [25, 26, 27, 28, 29]
+out: ???
+hydra: {run: {dir: '${out}'}}

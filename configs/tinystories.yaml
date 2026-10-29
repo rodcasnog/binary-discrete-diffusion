@@ -1,0 +1,9 @@
+# TinyStories: one story per record of 512 BPE tokens.
+defaults: [text, {model: small}, _self_]
+data:
+  dataset_path: data/tinystories
+  tokenizer_name: rodcasnog/tinystories-bpe-1k
+  max_seq_len: 512
+  padded: true
+training:
+  num_steps: 500000

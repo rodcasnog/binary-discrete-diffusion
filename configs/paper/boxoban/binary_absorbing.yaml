@@ -1,0 +1,3 @@
+# @package _global_
+defaults: [/boxoban, _self_]
+diffusion: {kernel: binary_absorbing}

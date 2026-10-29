@@ -1,0 +1,4 @@
+hidden_dim: 512
+num_layers: 12
+num_heads: 8
+mlp_dim: 2048

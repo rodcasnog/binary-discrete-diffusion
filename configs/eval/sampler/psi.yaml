@@ -1,0 +1,10 @@
+# The Psi-sampler (binary_diffusion.sample.Sampler); the defaults are ancestral sampling.
+nfe: ???              # network evaluations
+spacing: linear       # sampling grid: linear | log | cosine
+temperature: 1.0      # applied to the denoiser; 0 is greedy
+top_p: 1.0
+eta: 0.0              # re-corrupt fraction per level: 0 is ancestral sampling, 1 re-corrupts every position
+conf_coord: cavity    # confidence from the cavity (the context alone) or the denoiser (own state folded in)
+gamma: 0.0            # less confident positions are re-corrupted more often, as exp(-gamma * confidence)
+lam: 0.0              # less confident positions return to a noisier state, as exp(-lam * confidence)
+beta: 0.0             # uniform and bit kernels: candidates reopen as p ** beta, p their denoiser probability

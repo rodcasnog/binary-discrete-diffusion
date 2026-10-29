@@ -1,0 +1,42 @@
+[project]
+name = "binary-discrete-diffusion"
+version = "0.1.0"
+description = "Binary discrete diffusion: candidate-set diffusion for logic and planning tasks"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Rodrigo Casado Noguerales" }]
+requires-python = ">=3.11"
+dependencies = [
+    "flax>=0.12.7",
+    "huggingface-hub>=1.13",
+    "hydra-core>=1.3.2",
+    "jax>=0.10.0; sys_platform == 'darwin'",
+    "jax[cuda13]>=0.10.0; sys_platform == 'linux'",
+    "mauve-text>=0.4.0",
+    "numpy>=2.4",
+    "omegaconf>=2.3",
+    "optax>=0.2.8",
+    "orbax-checkpoint>=0.11.37",
+    "pyarrow>=24.0",
+    "tokenizers>=0.22.2",
+    "torch>=2.11",
+    "transformers>=5.7",
+    "wandb>=0.26",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.3,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "binary_diffusion"
+
+[tool.uv]
+override-dependencies = [
+    "nvidia-cublas>=13.2",
+    "nvidia-cudnn-cu13>=9.26; sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]

@@ -1,0 +1,14 @@
+# Graph coloring: the vertex colors of a graph given as the attention structure.
+defaults: [logic, _self_]
+data:
+  source: graphcolor       # generated on the fly
+  max_seq_len: ${data.graphcolor.n}
+  graphcolor:
+    n: 64                  # vertices
+    k: 4                   # colors; k divides n
+    p: 0.2                 # cross-group edge probability: the mean degree (n - n/k) p is above (k-1)^2
+    seed: 0                # seed of the instances, whatever training.seed
+model:
+  architecture: graph_dit
+training:
+  num_steps: 300000

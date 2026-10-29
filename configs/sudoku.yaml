@@ -1,0 +1,10 @@
+# Sudoku: the solution grid infilled around the puzzle's givens.
+defaults: [logic, _self_]
+data:
+  source: sudoku
+  dataset_path: data/sudoku
+  max_seq_len: 81
+model:
+  clue_embedding: true
+training:
+  num_steps: 1000000

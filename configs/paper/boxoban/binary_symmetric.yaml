@@ -1,0 +1,4 @@
+# @package _global_
+defaults: [/boxoban, _self_]
+diffusion: {kernel: binary_symmetric}
+training: {learning_rate: 1e-4}

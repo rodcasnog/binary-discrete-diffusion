@@ -1,0 +1,3 @@
+# @package _global_
+defaults: [/sudoku, _self_]
+diffusion: {kernel: binary_symmetric}

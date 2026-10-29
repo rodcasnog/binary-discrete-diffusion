@@ -1,0 +1,3 @@
+# @package _global_
+defaults: [/text8, _self_]
+diffusion: {kernel: binary_symmetric, schedule: log}

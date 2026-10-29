@@ -1,0 +1,8 @@
+__pycache__/
+*.py[oc]
+*.egg-info
+.venv
+/data
+/outputs
+wandb/
+.DS_Store

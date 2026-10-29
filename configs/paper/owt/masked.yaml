@@ -1,0 +1,3 @@
+# @package _global_
+defaults: [/owt, _self_]
+diffusion: {kernel: masked}

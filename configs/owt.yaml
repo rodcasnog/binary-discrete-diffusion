@@ -1,0 +1,8 @@
+# OpenWebText: packed records of 1024 BPE tokens.
+defaults: [text, {model: base}, _self_]
+data:
+  dataset_path: data/owt
+  tokenizer_name: dvruette/openwebtext-bpe-1k
+  max_seq_len: 1024
+training:
+  num_steps: 250000

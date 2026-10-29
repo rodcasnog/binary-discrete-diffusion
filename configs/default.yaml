@@ -1,0 +1,38 @@
+# Shared defaults; logic.yaml and text.yaml build on them.
+diffusion:
+  kernel: ???              # masked | uniform | binary_symmetric | binary_absorbing
+  objective: elbo          # elbo | xent | wxent
+  schedule: linear         # time schedule on [t_min, t_max], also the model's time input: linear | log | cosine
+  t_min: ???
+  t_max: 0.9999
+model:
+  architecture: dit        # dit | graph_dit
+  hidden_dim: ???
+  num_layers: ???
+  num_heads: ???
+  mlp_dim: ???
+  cond_dim: 128            # time-conditioning width
+  dtype: bfloat16          # compute dtype; parameters, norms, logits and losses stay float32
+  clue_embedding: false    # learned vector added to the input at clue positions
+training:
+  seed: 0
+  num_steps: ???
+  global_batch_size: 512   # split across the local GPUs
+  learning_rate: ???       # constant after a linear warmup
+  warmup_steps: ???
+  weight_decay: ???        # not applied to embeddings, biases and norm scales
+  adam_b1: 0.9
+  adam_b2: 0.999
+  max_grad_norm: 1.0
+  ema_decay: 0.9999
+  log_steps: ???
+  val_steps: ???
+  val_batches: 32
+  save_every: ???
+checkpoint:
+  max_to_keep: 5           # raw checkpoints, only to resume
+  ema_max_to_keep: 5
+  keep_period: ???         # EMA checkpoints are also kept at multiples of this step
+wandb:
+  project: binary-discrete-diffusion
+  mode: disabled           # online | offline | disabled; metrics.jsonl is always written

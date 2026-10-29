@@ -1,0 +1,9 @@
+# Boxoban: a solution's moves infilled after the board.
+defaults: [logic, _self_]
+data:
+  source: boxoban
+  dataset_path: data/boxoban
+  max_seq_len: 228         # 100 board cells and 128 actions
+training:
+  learning_rate: 3e-4
+  num_steps: 2500000

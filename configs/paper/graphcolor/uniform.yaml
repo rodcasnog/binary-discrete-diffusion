@@ -1,0 +1,3 @@
+# @package _global_
+defaults: [/graphcolor, _self_]
+diffusion: {kernel: uniform}

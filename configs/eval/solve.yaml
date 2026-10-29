@@ -1,0 +1,13 @@
+# Solve rate of a logic checkpoint (binary_diffusion.eval.solve): result.json in out.
+defaults: [{sampler: psi}, _self_]
+checkpoint_dir: ???   # <run>/checkpoints_ema/<step>
+# A dotlist applied to the run's config, e.g. 'overrides=["model.dtype=float32"]'.
+overrides: []
+split: test           # val | test
+hard: false           # the task's hard subset (HARD_* in data/<task>.py)
+n: null               # instances; null is the whole split (graph coloring needs a number)
+subset_seed: 1        # which n: a seeded permutation prefix
+seed: 0               # sampling keys, one per instance
+batch_size: 256
+out: ???
+hydra: {run: {dir: '${out}'}}

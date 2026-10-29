@@ -1,0 +1,10 @@
+# Text8: characters, 256 per record.
+defaults: [text, {model: small}, _self_]
+data:
+  dataset_path: data/text8
+  tokenizer_name: data/text8/tokenizer   # written by scripts/prep_text8.py
+  max_seq_len: 256
+diffusion:
+  t_min: 0.001
+training:
+  num_steps: 1000000

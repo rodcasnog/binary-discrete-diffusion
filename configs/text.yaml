@@ -1,0 +1,16 @@
+# Text corpora: unconditional generation of whole records.
+defaults: [default, _self_]
+data:
+  source: text
+  padded: false            # true: one PAD-filled document per record; samples take a validation record's length
+diffusion:
+  t_min: 0.0005
+training:
+  learning_rate: 3e-4
+  warmup_steps: 2500
+  weight_decay: 0.02
+  log_steps: 100
+  val_steps: 1000
+  save_every: 2500
+checkpoint:
+  keep_period: 100000

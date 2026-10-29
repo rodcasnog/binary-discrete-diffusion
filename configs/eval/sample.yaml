@@ -1,0 +1,10 @@
+# Text samples of a checkpoint (binary_diffusion.sample): samples.json and tokens.npy in out.
+defaults: [{sampler: psi}, _self_]
+checkpoint_dir: ???   # <run>/checkpoints_ema/<step>
+# A dotlist applied to the run's config, e.g. 'overrides=["model.dtype=float32"]'.
+overrides: []
+num_samples: 2000
+batch_size: 128
+seed: 0               # sampling keys, one per sample; also draws the lengths of padded corpora
+out: ???
+hydra: {run: {dir: '${out}'}}
